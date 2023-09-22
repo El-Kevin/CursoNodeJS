@@ -15,7 +15,7 @@ console.log(caja)
 var todos_los_divs = document.getElementsByTagName('div')
 
 var valor;
-for (valor in todosLosDivs){
+for (valor in todos_los_divs){
     console.log(todos_los_divs[valor]);
     var parrafo = document.createElement("p")
     var texto = document.createTextNode(todos_los_divs[valor].textContent)
