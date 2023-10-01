@@ -4,15 +4,31 @@
                       'border': '5px solid black',
                       'border-color': config.color
                   }">
-  <!--<h1>
-    Bienvenido al {{title}}!
-  </h1>
-  <p>{{descripcion}}</p>
+  <!--
   <button (click)="ocultarVideojuegos(false)" *ngIf = "mostrar_videojuego">Ocultar</button>
   <button (click)="ocultarVideojuegos(true)" *ngIf = "!mostrar_videojuego">Mostrar</button>
   <videojuego *ngIf = "mostrar_videojuego"></videojuego>
   <app-cursos></app-cursos>
--->
   <zapatillas></zapatillas>
+--><h1>
+  Bienvenido al {{title}}!
+</h1>
+<p>{{descripcion}}</p>
+
+<nav>
+  <a [routerLink] = "['/Home']" [routerLinkActive] = "['active']">Home</a>
+  &nbsp;
+  <a [routerLink] = "['/zapatillas']" [routerLinkActive] = "['active']">zapatillas</a>
+  &nbsp;
+  <a [routerLink] = "['/videojuegos']" [routerLinkActive] = "['active']">videojuegos</a>
+  &nbsp;
+  <a [routerLink] = "['/cursos']" [routerLinkActive] = "['active']">Cursos</a>
+  &nbsp;
+  <a [routerLink] = "['/externo']" [routerLinkActive] = "['active']">externo</a>
+  &nbsp;
+  <a [routerLink] = "['/contacto']" [routerLinkActive] = "['active']">contacto</a>
+</nav>
+  
+  <router-outlet></router-outlet>
   
 </div>

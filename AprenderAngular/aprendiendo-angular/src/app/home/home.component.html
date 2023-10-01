@@ -1,0 +1,11 @@
+<p>home works!</p>
+<div *ngIf = "identificado; then identifica else noidentificado">
+    <h3>Identificado</h3>
+</div>
+<ng-template #identifica>
+    <h3> identificado</h3>
+</ng-template>
+<ng-template #noidentificado>
+    <h3>No identificado</h3>
+    <button (click) = "identificate()"> toca el boton</button>
+</ng-template>

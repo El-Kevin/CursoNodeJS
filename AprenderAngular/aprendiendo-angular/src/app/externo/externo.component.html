@@ -1,0 +1,37 @@
+{{fecha | date: 'fullDate'}}
+<hr>
+{{fecha | date: 'dd/MM/yy' | uppercase }}
+<hr>
+{{88 | calculadora: 2}}
+<p>externo works!</p>
+<input type = "text" [(ngModel)] = "userId" (keyup.enter) = "cargaUsuario(userId)">
+<div * ngIf = "!user">
+    Cargando...
+
+</div>
+<div *ngIf = "user"> 
+    <img src = "{{user.avatar}}" width = "200px"/>
+    <h2> {{user.first_name + ' '+ user.last_name}}</h2>
+</div>
+<hr>
+<h2>Crear usuario</h2>
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+  <p>
+    <label for="nombre">Nombre</label>
+    <input type="text" name="name" #name="ngModel" [(ngModel)]="newUser.name" required />
+    <span *ngIf="name.touched && !name.valid">El nombre no es válido</span>
+  </p>
+
+  <p>
+    <label for="job">Trabajo</label>
+    <input type="text" name="job" #job="ngModel" [(ngModel)]="newUser.job" required />
+    <span *ngIf="job.touched && !job.valid">El trabajo no es válido</span>
+  </p>
+
+  <input type="submit" value="enviar" [disabled]="!newUserForm.valid" />
+</form>
+<div *ngIf = "usuario_guardado">
+    <p>{{usuario_guardado.name}}</p>
+    <p>{{usuario_guardado.job}}</p>
+
+</div>
